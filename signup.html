@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=[device-width], initial-scale=1.0" />
+    <title>Cryptography</title>
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"
+    ></script>
+  </head>
+
+  <body>
+    <!------ HEADER ------->
+
+    <section class="header1">
+      <nav>
+        <a href="index.html"><img src="images/log.png" alt="logo" /></a>
+        <div class="nav-links" id="nav-links">
+          <i class="nav-icons fa fa-times" onclick="hideMenu()"></i>
+
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="onetimepad.html">One Time Pad</a></li>
+            <li><a href="playfair.html">Playfair Cipher</a></li>
+            <li><a href="vigenere.html">Vigenère Cipher</a></li>
+            <li><a href="caesar.html">Caesar Cipher</a></li>  
+                <style>
+                    body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    text-align: center;
+                    padding-top: 0px;
+                  }
+                  .container {
+                    max-width: 600px;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                  }
+                  input[type="text"], textarea {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                  }
+                  button {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                  }
+                  button:hover {
+                    background-color: #45a049;
+                  }
+                </style>
+                </head>
+                <body></a></li>
+          </ul>
+        </div>
+        <i class="nav-icons fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <div class="text-box">
+        <h1>Sign Up</h1>
+      </div>
+    </section>
+    <!------ HEADER ------->
+    
+    <br></br>
+    
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"],
+        input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signupForm" onsubmit="encryptPassword(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Encrypt Password">
+        </form>
+
+        <div class="result" id="result" style="display: none;">
+            <hr>
+            <h3>Encrypted Password:</h3>
+            <p id="encryptedPassword"></p>
+            <input type="button" value="Decrypt Password" onclick="decryptPassword()">
+        </div>
+    </div>
+
+    <script>
+        function encryptPassword(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            const password = document.getElementById('password').value;
+            const encryptedPassword = btoa(password); // Base64 encoding for demonstration
+
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('encryptedPassword').innerText = encryptedPassword;
+
+            // Clear the password field after encryption (optional)
+            document.getElementById('password').value = '';
+        }
+
+        function decryptPassword() {
+            const encryptedPassword = document.getElementById('encryptedPassword').innerText;
+            const decryptedPassword = atob(encryptedPassword); // Base64 decoding for demonstration
+
+            alert('Decrypted Password: ' + decryptedPassword);
+        }
+    </script>
+</body>
+
+   
+    <!-----FOOTER----->
+    <section class="footer">
+      <p>
+        @copyright
+      </p>
+      <div class="icons">
+        <i class="icons-items fab fa-facebook-f"></i>
+        <i class="icons-items fab fa-twitter"></i>
+        <i class="icons-items fab fa-instagram"></i>
+        <i class="icons-items fab fa-linkedin-in"></i>
+      </div>
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>
